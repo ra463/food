@@ -807,6 +807,7 @@ section{
         width: 320px;
         height: 440px;
         border: 2px solid #ff0157;
+        transform: scale(1.15);
     }
     .big-container .wrapper{
         width: 3200px;
