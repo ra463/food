@@ -13,7 +13,7 @@
 <body>
     <nav>
         <a href="#" class="logo">Food<span>.</span></a>
-        <ul class="navigation" onclick="togglemenu();">
+        <ul class="navigation">
             <li><a href="#banner">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
@@ -24,16 +24,26 @@
         </ul>
         <div class="search">
             <input type="text" placeholder="Search">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search"
-                class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512">
-                <path fill="currentColor"
-                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
-                </path>
-            </svg>
+            <i class="fas fa-search"></i> <input type="text" placeholder="Search">
         </div>
-        <div class="menutoggle" onclick="togglemenu();"></div>
     </nav>
+    <div class="loginform">
+        <div id="close-btn" class="fas fa-times"></div>
+        <form action="/login" method="post">
+            <h3>Sign In</h3>
+            <span>Username</span>
+            <input type="email" name="" placeholder="Enter Your Email" class="box">
+            <span>Password</span>
+            <input type="password" name="" placeholder="Enter Your password" class="box">
+            <div class="checkbox">
+                <input type="checkbox" name="" id="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+            <input type="submit" value="sign in" class="btn-sign-in">
+            <p>Forgot Password? <a href="">Click Here</a></p>
+            <p>Don't have an account?<a href="">Create Here</a></p>
+        </form>
+    </div>
     <section class="banner" id="banner">
         <div class="content">
             <div class="loder">
@@ -747,11 +757,12 @@
         nav.classList.toggle("sticky", window.scrollY > 0);
     });
 
-    function togglemenu(){
-        const menutoggle = document.querySelector('.menutoggle');
-        const navigation = document.querySelector('.navigation');
-        menutoggle.classList.toggle('active');
-        navigation.classList.toggle('active');
+     let loginform = document.querySelector('.loginform');
+    document.querySelector('.login').onclick = () =>{
+        loginform.classList.toggle('active');
+    }
+    document.querySelector('#close-btn').onclick = () =>{
+        loginform.classList.remove('active');
     }
 </script>
 
