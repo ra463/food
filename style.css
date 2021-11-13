@@ -171,6 +171,7 @@ p{
 /* ABOUT US */
 section{
     padding: 100px;
+    padding-bottom: 0;
 }
 .row{
     position: relative;
